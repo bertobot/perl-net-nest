@@ -10,20 +10,18 @@ Sample code:
 use strict;
 
 use Net::Nest;
-use Data::Dumper;
-$Data::Dumper::Indent = 1;
 
 my $nest = new Net::Nest({ 
-  username => 'user@email.address', 
-  password => 'changeme',
-  units    => 'F',  # [F]arenheit or [C]elsius              
+    username => 'user@email.address', 
+    password => 'changeme',
+    units    => 'F',  # [F]arenheit or [C]elsius              
 }); 
 
 foreach my $device (@{ $nest->devices }) {
          
-        printf "%s current / target: %0.1f/%0.1f\n", $device->serial, $device->current_temperature, $device->target_temperature;
+    printf "%s current / target: %0.1f/%0.1f\n", $device->serial, $device->current_temperature, $device->target_temperature;
 
-        # set temperature to two degrees farenheit less than current temperature
-        $device->set_temperature(70);
+    # set temperature to two degrees farenheit less than current temperature
+    $device->set_temperature(70);
 }
 ```
