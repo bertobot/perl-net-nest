@@ -21,7 +21,7 @@ foreach my $device (@{ $nest->devices }) {
          
     printf "%s current / target: %0.1f/%0.1f\n", $device->serial, $device->current_temperature, $device->target_temperature;
 
-    # set temperature to two degrees farenheit less than current temperature
+    # set temperature to 70 degrees farenheit
     $device->set_temperature(70);
 }
 ```
